@@ -2,6 +2,9 @@
 \usepackage[utf8]{inputenc}
 \usepackage[a4paper, total={5.3in, 10in}, top=2cm]{geometry}		% width=5.3in, height=10in, top margin=2cm on each page
 
+\usepackage[T1]{fontenc}
+\usepackage{csquotes} % french quotes
+
 \usepackage{xcolor}																				  % define some colors
 \definecolor{highlight}{HTML}{283559}
 \definecolor{highlight2}{HTML}{1A2640}
@@ -13,7 +16,7 @@
 \usepackage[super]{nth}							% when you write \nth{2} you get a nice superscript
 \usepackage[								% coloring of links
 	colorlinks = true,
-	linkcolor = highlight,
+	linkcolor = link,
 	urlcolor = highlight,
 	citecolor= highlight
 ]{hyperref}
@@ -35,7 +38,7 @@
 \usepackage{fancyhdr}																		  
 \fancyhf{}
 \rhead{Curriculum Vit\ae}
-\lhead{Prometheus Fire}
+\lhead{Paul Kervegan}
 \rfoot{Page \thepage}
 \renewcommand{\headrulewidth}{0.5pt}
 \renewcommand{\footrulewidth}{0pt}
@@ -49,14 +52,21 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \vspace*{-1cm}
 \centering 
-%\input{title.tex}
+\input{title.tex}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%% WORK %%%%%%%%%%%% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\vspace*{0.4cm}
+\section{Expériences professionnelles}
+\input{travail.tex}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%% EDUCATION %%%%%%%%%%%% 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \vspace*{0.4cm}
-\section{Education}
-%\input{education.tex}
+\section{Formation}
+\input{formation.tex}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%% PUBLICATIONS %%%%%%%%%%%% 
