@@ -21,6 +21,13 @@
 	citecolor= highlight
 ]{hyperref}
 
+\usepackage[
+	backend=biber,
+	%style=alphabetic,
+	%sorting=ynt
+]{biblatex}
+\addbibresource{./bib/phk\_publications.bib}
+
 \usepackage{fontspec}							% package to change fonts				
 \setmainfont[
 	BoldFont=Cormorant Garamond Bold,
@@ -72,7 +79,7 @@
 %%%%%%%%%%%% PUBLICATIONS %%%%%%%%%%%% 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Publications}
-%\input{publications.tex}
+\input{publications.tex}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%% HONORS and SCHOLARSHIPS %%%%%%%%%%%% 
