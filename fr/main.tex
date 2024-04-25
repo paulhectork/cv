@@ -50,18 +50,18 @@ sorting=ydnt,
 style=authoryear
 ]{biblatex}
 \nocite{*} % print all bib entries
-\addbibresource{./bib/phk_publications.bib}
-\addbibresource{./bib/phk_communications.bib}
+\addbibresource{../bib/phk_publications.bib}
+\addbibresource{../bib/phk_communications.bib}
 
 % WARNING: The 〈datasource〉 name should be exactly as given in a \addresource macro defining a data source for the document. are allowed within a \map element.
 \DeclareSourcemap{%
 	\maps[datatype=bibtex]{%
 		\map[overwrite]{%
-			\perdatasource{./bib/phk_publications.bib}
+			\perdatasource{../bib/phk_publications.bib}
 			\step[fieldset=keywords, fieldvalue={,publications}, append]
 		}
 		\map[overwrite]{%
-			\perdatasource{./bib/phk_communications.bib}
+			\perdatasource{../bib/phk_communications.bib}
 			\step[fieldset=keywords, fieldvalue={,communications}, append]
 		}
 	}
@@ -89,11 +89,13 @@ style=authoryear
 \section{Formation}
 \input{formation.tex}
 
+%%%%%%%%%%%% COURS %%%%%%%%%%%% 
+\section{Cours, ateliers et coordination scientifique}
+\input{cours.tex}
+
 %%%%%%%%%%%% PUBLICATIONS %%%%%%%%%%%% 
-%%%%%%%%%%%%%%%%%%%% not working but should be
 \printbibliography[title={Publications}, keyword={publications}]
 \printbibliography[title={Communications}, keyword={communications}]
-%\printbibliography
 
 %%%%%%%%%%%% HONORS and SCHOLARSHIPS %%%%%%%%%%%% 
 \section{Honors}
@@ -104,9 +106,6 @@ style=authoryear
 %\input{skills.tex}
 
 
-%%%%%%%%%%%% SERVICE %%%%%%%%%%%% 
-\section{Service To The Scientific Community}
-%\input{service}
 
 
 %%%%%%%%%%%% EXTRAS %%%%%%%%%%%% 
