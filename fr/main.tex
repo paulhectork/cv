@@ -21,13 +21,6 @@
 	citecolor= highlight
 ]{hyperref}
 
-\usepackage[
-	backend=biber,
-	%style=alphabetic,
-	%sorting=ynt
-]{biblatex}
-\addbibresource{./bib/phk_publications.bib}
-
 \usepackage{fontspec}							% package to change fonts				
 \setmainfont[
 	BoldFont=Cormorant Garamond Bold,
@@ -50,61 +43,75 @@
 \renewcommand{\headrulewidth}{0.5pt}
 \renewcommand{\footrulewidth}{0pt}
 
+%%%% biblio
+\usepackage[
+backend=biber,
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% LES DEUX LIGNES EN DESSOUS FONT PLANTER LATEX SMH
+% style=alphabetic,
+% sorting=ynt,
+style=enc
+]{biblatex}
+\nocite{*} % print all bib entries
+\addbibresource{./bib/phk_publications.bib}
+\addbibresource{./bib/phk_communications.bib}
+
+%%%%%%%%%%%%% not working but should be
+%\DeclareSourcemap{%
+%	\maps[datatype=bibtex]{%
+%		\map[overwrite]{%
+%			\perdatasource{.bib/phk_publications.bib}
+%			\step[fieldset=keywords, fieldvalue={,publications}, append]
+%		}
+%		\map[overwrite]{%
+%			\perdatasource{.bib/phk_communications.bib}
+%			\step[fieldset=keywords, fieldvalue={,communications}, append]
+%		}
+%	}
+%}
+
+
 
 \begin{document}
 \thispagestyle{empty}					% Turn off header and footer for the first page
 \pagestyle{fancy}			 		% For the rest of the pages switch to the fancy page style defined just above the document begin
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%% TITLE %%%%%%%%%%%% 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \vspace*{-1cm}
 \centering 
 \input{title.tex}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%% WORK %%%%%%%%%%%% 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \vspace*{0.4cm}
 \section{Expériences professionnelles}
 \input{travail.tex}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%% EDUCATION %%%%%%%%%%%% 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \vspace*{0.4cm}
 \section{Formation}
 \input{formation.tex}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%% PUBLICATIONS %%%%%%%%%%%% 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Publications}
-\input{publications.tex}
+%%%%%%%%%%%%%%%%%%%% not working but should be
+%\printbibliography[title={Publications}, keyword={publications}]
+%\printbibliography[title={Communications}, keyword={communications}]
+\printbibliography[title={Publications et communications}]
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%% HONORS and SCHOLARSHIPS %%%%%%%%%%%% 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Honors}
 %\input{honors.tex}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%% SKILLS %%%%%%%%%%%% 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Skills}
 %\input{skills.tex}
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%% SERVICE %%%%%%%%%%%% 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Service To The Scientific Community}
 %\input{service}
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%% EXTRAS %%%%%%%%%%%% 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Extracurricular Activities}
 %\input{extra.tex}
 
