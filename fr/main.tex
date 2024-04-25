@@ -46,29 +46,26 @@
 %%%% biblio
 \usepackage[
 backend=biber,
-%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% LES DEUX LIGNES EN DESSOUS FONT PLANTER LATEX SMH
-% style=alphabetic,
-% sorting=ynt,
-style=enc
+sorting=ydnt,
+style=authoryear
 ]{biblatex}
 \nocite{*} % print all bib entries
 \addbibresource{./bib/phk_publications.bib}
 \addbibresource{./bib/phk_communications.bib}
 
-%%%%%%%%%%%%% not working but should be
-%\DeclareSourcemap{%
-%	\maps[datatype=bibtex]{%
-%		\map[overwrite]{%
-%			\perdatasource{.bib/phk_publications.bib}
-%			\step[fieldset=keywords, fieldvalue={,publications}, append]
-%		}
-%		\map[overwrite]{%
-%			\perdatasource{.bib/phk_communications.bib}
-%			\step[fieldset=keywords, fieldvalue={,communications}, append]
-%		}
-%	}
-%}
+% WARNING: The 〈datasource〉 name should be exactly as given in a \addresource macro defining a data source for the document. are allowed within a \map element.
+\DeclareSourcemap{%
+	\maps[datatype=bibtex]{%
+		\map[overwrite]{%
+			\perdatasource{./bib/phk_publications.bib}
+			\step[fieldset=keywords, fieldvalue={,publications}, append]
+		}
+		\map[overwrite]{%
+			\perdatasource{./bib/phk_communications.bib}
+			\step[fieldset=keywords, fieldvalue={,communications}, append]
+		}
+	}
+}
 
 
 
@@ -80,6 +77,7 @@ style=enc
 \vspace*{-1cm}
 \centering 
 \input{title.tex}
+\cite{kervegan_marque_2023}\textsc{}
 
 %%%%%%%%%%%% WORK %%%%%%%%%%%% 
 \vspace*{0.4cm}
@@ -93,9 +91,9 @@ style=enc
 
 %%%%%%%%%%%% PUBLICATIONS %%%%%%%%%%%% 
 %%%%%%%%%%%%%%%%%%%% not working but should be
-%\printbibliography[title={Publications}, keyword={publications}]
-%\printbibliography[title={Communications}, keyword={communications}]
-\printbibliography[title={Publications et communications}]
+\printbibliography[title={Publications}, keyword={publications}]
+\printbibliography[title={Communications}, keyword={communications}]
+%\printbibliography
 
 %%%%%%%%%%%% HONORS and SCHOLARSHIPS %%%%%%%%%%%% 
 \section{Honors}
