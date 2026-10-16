@@ -46,7 +46,7 @@ dans TexStudio, après avoir associé à XeLaTeX et Biber les commandes ci-dessu
 txs:///xelatex | txs:///biber | txs:///xelatex
 ```
 
-quand on compile le document pour la première fois, il sera peut-être nécessaire de lancer dans un terminal:
+quand on compile le document pour la première fois ou quand on change les fichiers `.bib`, il sera peut-être nécessaire de lancer dans un terminal:
 
 ```bash
 # dans le dossier ou se trouve main.tex
